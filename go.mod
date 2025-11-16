@@ -2,4 +2,4 @@ module github.com/jenyapark/zmq-go
 
 go 1.25.4
 
-require github.com/pebbe/zmq4 v1.4.0 // indirect
+require github.com/pebbe/zmq4 v1.4.0
