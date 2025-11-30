@@ -16,7 +16,7 @@ func main() {
 
 	fmt.Println("Connecting to hello world server...")
 
-	// REP 소켓 생성
+	// REQ 소켓 생성
 	socket, err := ctx.NewSocket(zmq4.REQ)
 	if err != nil {
 		panic(err)
