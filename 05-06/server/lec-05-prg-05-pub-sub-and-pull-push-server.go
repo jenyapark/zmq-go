@@ -13,21 +13,25 @@ func main() {
 		panic(err)
 	}
 
+	// PUB 소켓 생성
 	publisher, err := ctx.NewSocket(zmq4.PUB)
 	if err != nil {
 		panic(err)
 	}
 
-	err = publisher.Bind("tcp://*:5556")
+	// 바인드
+	err = publisher.Bind("tcp://*:5557")
 	if err != nil {
 		panic(err)
 	}
 
+	// PULL 소켓 생성
 	collector, err := ctx.NewSocket(zmq4.PULL)
 	if err != nil {
 		panic(err)
 	}
 
+	// 바인드
 	err = collector.Bind("tcp://*:5558")
 	if err != nil {
 		panic(err)

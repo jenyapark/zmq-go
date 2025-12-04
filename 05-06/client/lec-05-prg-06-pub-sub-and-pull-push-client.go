@@ -15,6 +15,7 @@ func main() {
 		panic(err)
 	}
 
+	//SUB 소켓 생성
 	subscriber, err := ctx.NewSocket(zmq4.SUB)
 	if err != nil {
 		panic(err)
@@ -25,16 +26,19 @@ func main() {
 		panic(err)
 	}
 
-	err = subscriber.Connect("tcp://localhost:5556")
+	// 커넥트
+	err = subscriber.Connect("tcp://localhost:5557")
 	if err != nil {
 		panic(err)
 	}
 
+	//PUSH 소켓 생성
 	publisher, err := ctx.NewSocket(zmq4.PUSH)
 	if err != nil {
 		panic(err)
 	}
 
+	//커넥트
 	err = publisher.Connect("tcp://localhost:5558")
 	if err != nil {
 		panic(err)

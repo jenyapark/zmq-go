@@ -44,7 +44,7 @@ func main() {
 		}
 
 		// 출력
-		fmt.Println("server: publishing update =>", message)
+		fmt.Println("server: publishing update =>", string(message))
 
 		// PUB 송신
 		_, err = publisher.SendBytes(message, 0) // 전송한 바이트 수는 필요 없으므로 버림
